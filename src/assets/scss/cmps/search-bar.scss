@@ -1,0 +1,101 @@
+.search-bar {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px 0;
+    margin: 20px 0;
+    padding-inline: 20px;
+    position: relative;
+
+    form {
+
+        input {
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 1px 1px 5px $grey;
+        }
+
+        button {
+            border-radius: 10px;
+            background-color: $yellow;
+            transition: 0.5s;
+            margin-left: 10px;
+            box-shadow: 1px 1px 5px $grey;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    select {
+        border: none;
+        border-radius: 5px;
+        box-shadow: 1px 1px 5px $grey;
+        padding: 10px;
+        font-family: Noto Sans;
+        font-weight: 700;
+        font-size: 14px;
+    }
+
+    .select-drop-down {
+        position: absolute;
+        right: 25px;
+        font-size: 14px;
+        top: 65px;
+        background-color: white;
+        border-radius: 0 0 20px 20px;
+
+        p {
+            width: 80px;
+            background-color: white;
+            border-radius: 20px;
+            padding: 0 5px;
+            transition: 0.2s;
+
+            &:hover {
+                background-color: $pink;
+            }
+        }
+    }
+}
+
+.search-bar-animation {
+    -webkit-animation: swing-in-top-fwd 2s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+    animation: swing-in-top-fwd 2s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+}
+
+@-webkit-keyframes swing-in-top-fwd {
+    0% {
+        -webkit-transform: rotateX(-100deg);
+        transform: rotateX(-100deg);
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: rotateX(0deg);
+        transform: rotateX(0deg);
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        opacity: 1;
+    }
+}
+
+@keyframes swing-in-top-fwd {
+    0% {
+        -webkit-transform: rotateX(-100deg);
+        transform: rotateX(-100deg);
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: rotateX(0deg);
+        transform: rotateX(0deg);
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        opacity: 1;
+    }
+}

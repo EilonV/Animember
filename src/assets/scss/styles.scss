@@ -1,0 +1,23 @@
+// SETUP
+@import 'setup/_variables';
+@import 'setup/mixins.scss';
+
+// BASICS
+@import 'basics/base';
+@import 'basics/layout';
+@import 'basics/helpers';
+
+// FONTS
+@import 'setup/fonts';
+
+// CMPS
+@import 'cmps/animes.scss';
+@import 'cmps/header.scss';
+@import 'cmps/search-bar.scss';
+
+// PAGES
+@import 'views/_home.scss';
+@import 'views/_anime-details.scss';
+
+// ICONS
+@import 'icons.scss';

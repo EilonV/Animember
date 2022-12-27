@@ -1,0 +1,38 @@
+.fa-arrow-left-long {
+    height: 30px;
+    color: $pink;
+}
+
+.go-back {
+    cursor: pointer;
+    position: absolute;
+    top: 56px;
+
+    &:hover {
+        svg {
+            animation: slide-left 0.7s ease-in-out 0s 1 normal forwards;
+        }
+    }
+
+    :first-child {
+        margin-top: auto;
+    }
+
+    p {
+        font-size: 24px;
+    }
+
+    @keyframes slide-left {
+        0% {
+            transform: translateX(0);
+        }
+
+        50% {
+            transform: translateX(-10px);
+        }
+
+        100% {
+            transform: translateX(0px);
+        }
+    }
+}
