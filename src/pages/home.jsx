@@ -20,12 +20,12 @@ export const Home = () => {
 
     const handleSearch = (ev) => {
         ev.preventDefault()
-        axios.get(`https:kitsu.io/api/edge/anime?filter[text]=${ev.target[0].value}`)
+        axios.get(`https://kitsu.io/api/edge/anime?filter[text]=${ev.target[0].value}`)
             .then((res) => dispatch(changeAnime(res.data.data)))
             .then(dispatch(changeAnimeSelection('anime')))
             .then(console.log('currAnime', currAnime))
     }
-    
+
     return <section className="search main-layout">
         <Header handleSearch={handleSearch} myRef={myRef} anime={anime} topAnimes={topAnimes} />
         <SearchBar handleSearch={handleSearch} anime={anime} topAnimes={topAnimes} currAnime={currAnime} />
