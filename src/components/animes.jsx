@@ -3,8 +3,6 @@ import { useDispatch } from 'react-redux'
 import { getTopAnimes } from '../features/anime/animeSlice'
 import axios from 'axios'
 import { Link } from "react-router-dom"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons'
 
 export const Animes = ({ myRef, anime, topAnimes }) => {
     const dispatch = useDispatch()

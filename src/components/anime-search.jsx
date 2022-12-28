@@ -9,11 +9,6 @@ export const SearchBar = ({ handleSearch, anime, topAnimes, currAnime }) => {
         dispatch(sortAnimes([currAnime, ev.target.value]))
     }
 
-    const sortBy = () => {
-        // topAnimes.sort((a, b) => a.id - b.id)
-        console.log(topAnimes);
-    }
-
     return <section className="search-bar flex align-center space-between">
         <form onSubmit={handleSearch}>
             <input type="text" placeholder="e.g. Attack on titan..." />
