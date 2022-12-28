@@ -25,7 +25,7 @@ export const Home = () => {
             .then(dispatch(changeAnimeSelection('anime')))
             .then(console.log('currAnime', currAnime))
     }
-
+    
     return <section className="search main-layout">
         <Header handleSearch={handleSearch} myRef={myRef} anime={anime} topAnimes={topAnimes} />
         <SearchBar handleSearch={handleSearch} anime={anime} topAnimes={topAnimes} currAnime={currAnime} />

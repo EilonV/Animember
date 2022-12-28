@@ -13,16 +13,14 @@ export const Animes = ({ myRef, anime, topAnimes }) => {
                 .then((res) => dispatch(getTopAnimes(res.data.data)))
     })
 
-    console.log(topAnimes);
-    // topAnimes.sort((a, b) => a.id - b.id)
-    console.log(window.innerHeight);
+    console.log('topAnimes', topAnimes);
     return <section ref={myRef} className="anime-list">
         <main className="animes">
             {anime ? anime.map((item) => {
                 return <div className="anime" key={item.id}>
                     <Link to={`/anime/${item.id}`} state={{ item }}>
                         <img src={item.attributes.posterImage.large} alt="" />
-                        <span className="get-anime-details"><p>Get anime details</p></span>
+                        {/* <span className="get-anime-details"><p>Get anime details</p></span> */}
                     </Link>
                     <p>{item.attributes.titles.en}</p>
                     <p>{item.attributes.titles.en !== item.attributes.titles.en_jp && item.attributes.titles.en_jp}</p>
@@ -35,7 +33,7 @@ export const Animes = ({ myRef, anime, topAnimes }) => {
                         <Link to={`/anime/${item.id}`} state={{ item }}>
                             <img src={item.attributes.posterImage.large} alt="" />
                         </Link>
-                        <span className="get-anime-details"><p>Get anime details</p></span>
+                        {/* <span className="get-anime-details"><p>Get anime details</p></span> */}
                         <p>{item.attributes.titles.en}</p>
                         <p>{item.attributes.titles.en === item.attributes.titles.en_jp ? '' : item.attributes.titles.en_jp}</p>
                         <p>{item.attributes.titles.ja_jp === item.attributes.titles.en_jp ? '' : item.attributes.titles.ja_jp}</p>
