@@ -36,6 +36,8 @@ export const animeSlice = createSlice({
                     case 'name':
                         state.topAnimes.sort((a, b) => b.attributes.titles.en.localeCompare(a.attributes.titles.en, 'en'))
                         break
+                    default:
+                        break;
                 }
             else {
                 switch (action.payload[1]) {
@@ -48,12 +50,15 @@ export const animeSlice = createSlice({
                     case 'name':
                         state.anime.sort((a, b) => a.attributes.titles.en.localeCompare(b.attributes.titles.en, 'en'))
                         break
+                    default:
+                        break;
                 }
             }
 
         }
     },
 })
+
 
 // Action creators are generated for each case reducer function
 export const { changeAnime, changeAnimeSelection, getTopAnimes, sortAnimes } = animeSlice.actions

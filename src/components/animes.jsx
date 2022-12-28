@@ -11,7 +11,7 @@ export const Animes = ({ myRef, anime, topAnimes }) => {
         if (!topAnimes)
             axios.get('https://kitsu.io/api/edge/anime?sort=-average_rating&page%5Blimit%5D=20')
                 .then((res) => dispatch(getTopAnimes(res.data.data)))
-    }, [])
+    })
 
     console.log(topAnimes);
     // topAnimes.sort((a, b) => a.id - b.id)
