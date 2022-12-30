@@ -112,6 +112,30 @@
             }
         }
 
+        .no-img {
+            width: 50% !important;
+            // max-width: 250px;
+            // min-width: 100px;
+            border-radius: 10px;
+            transition: 0.3s;
+            background-color: gray;
+
+            &:hover {
+                filter: blur(2px);
+                border-radius: 20px;
+                cursor: pointer;
+
+                .get-anime-details {
+                    opacity: 0.5;
+                }
+            }
+
+            &:hover~.get-anime-details {
+                transition: 0.3s;
+                opacity: 1;
+            }
+        }
+
         .get-anime-details {
             position: absolute;
             top: 50%;

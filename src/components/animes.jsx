@@ -13,13 +13,14 @@ export const Animes = ({ myRef, anime, topAnimes }) => {
                 .then((res) => dispatch(getTopAnimes(res.data.data)))
     })
 
-    console.log('topAnimes', topAnimes);
+    console.log('animes', anime);
     return <section ref={myRef} className="anime-list">
         <main className="animes">
             {anime ? anime.map((item) => {
                 return <div className="anime" key={item.id}>
                     <Link to={`/anime/${item.id}`} state={{ item }}>
-                        <img src={item.attributes.posterImage.large} alt="" />
+                        {/* <img src={item.attributes.posterImage.large} alt="" /> */}
+                        {item.attributes.posterImage ? (<img src={item.attributes.posterImage.large} alt="" />) : <img className="no-img" src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png' alt="no poster for this anime" />}
                         {/* <span className="get-anime-details"><p>Get anime details</p></span> */}
                     </Link>
                     <p>{item.attributes.titles.en}</p>

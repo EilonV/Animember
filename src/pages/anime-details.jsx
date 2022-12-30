@@ -15,7 +15,9 @@ export const AnimeDetails = () => {
                 <FontAwesomeIcon icon={faArrowLeftLong} className="fa-xl" />
                 <p>&nbsp;back to list</p>
             </div>
-            <img src={item.attributes.posterImage.original} alt={item.attributes.titles.en + ' poster image'} />
+            {/* <img src={item.attributes.posterImage.original} alt={item.attributes.titles.en + ' poster image'} /> */}
+            {item.attributes.posterImage ? (<img src={item.attributes.posterImage.original} alt={item.attributes.titles.en + ' poster image'} />) : <img className="no-img" src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png' alt="no poster for this anime" />}
+
             <div>
                 <h1>{item.attributes.titles.en}</h1>
                 <h2> {item.attributes.titles.en_jp === item.attributes.titles.en ? '' : item.attributes.titles.en_jp}</h2>
