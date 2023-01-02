@@ -9,11 +9,12 @@ export const Animes = ({ myRef, anime, topAnimes }) => {
 
     useEffect(() => {
         if (!topAnimes)
-            axios.get('https://kitsu.io/api/edge/anime?sort=-average_rating&page%5Blimit%5D=20')
+            // axios.get('https://kitsu.io/api/edge/anime?sort=-average_rating&page%5Blimit%5D=20')
+            //     .then((res) => dispatch(getTopAnimes(res.data.data)))
+            axios.get('https://kitsu.io/api/edge/anime?sort=-average_rating&filter[seasonYear]=2022&page%5Blimit%5D=20')
                 .then((res) => dispatch(getTopAnimes(res.data.data)))
     })
-
-    console.log('animes', anime);
+    console.log(topAnimes)
     return <section ref={myRef} className="anime-list">
         <main className="animes">
             {anime ? anime.map((item) => {

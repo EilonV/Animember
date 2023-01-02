@@ -19,9 +19,9 @@ export const Header = ({ handleSearch, myRef }) => {
             <div className='swticher-3d-svgs'>
                 <FontAwesomeIcon className='fa-xl' icon={faCube} />
             </div>
-            <label title='toggle 3D' class="switch" onChange={change3D}>
+            <label title='toggle 3D' className="switch" onChange={change3D}>
                 <input type="checkbox" />
-                <span class="slider round"></span>
+                <span className="slider round"></span>
             </label>
         </div>
         <iframe ref={headerRef} title="3d-model" src='https://my.spline.design/untitled-e56ac7ddb3c38e91c58df6a9e0a07acb/' frameBorder='0' width='100%' height='100%'></iframe>
