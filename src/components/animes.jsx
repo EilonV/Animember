@@ -1,20 +1,29 @@
 import { useEffect } from "react"
 import { useDispatch } from 'react-redux'
-import { getTopAnimes } from '../features/anime/animeSlice'
+import { getTopAnimes, addToTopAnimes, incOffset } from '../features/anime/animeSlice'
 import axios from 'axios'
 import { Link } from "react-router-dom"
 
-export const Animes = ({ myRef, anime, topAnimes }) => {
+export const Animes = ({ myRef, anime, topAnimes, currAnimeOffset, counter }) => {
     const dispatch = useDispatch()
-
     useEffect(() => {
         if (!topAnimes)
             // axios.get('https://kitsu.io/api/edge/anime?sort=-average_rating&page%5Blimit%5D=20')
             //     .then((res) => dispatch(getTopAnimes(res.data.data)))
-            axios.get('https://kitsu.io/api/edge/anime?sort=-average_rating&filter[seasonYear]=2022&page%5Blimit%5D=20')
+            axios.get('https://kitsu.io/api/edge/anime?sort=-averageRating&filter[seasonYear]=2022&filter[status]=current&page%5Blimit%5D=20&page[offset]=0')
                 .then((res) => dispatch(getTopAnimes(res.data.data)))
+        // axios.get('https://kitsu.io/api/edge/trending/anime?page%5Blimit%5D=20')
+        //     .then((res) => dispatch(getTopAnimes(res.data.data)))
     })
     console.log(topAnimes)
+    console.log('currAnimeOffset', currAnimeOffset)
+    const addAnimes = () => {
+        axios.get(`https://kitsu.io/api/edge/anime?sort=-averageRating&filter[seasonYear]=2022&filter[status]=current&page%5Blimit%5D=20&page[offset]=${currAnimeOffset}`)
+            .then(dispatch(incOffset))
+            .then((res) => dispatch(addToTopAnimes(res.data.data)))
+        console.log('currAnimeOffset AFTER', currAnimeOffset)
+    }
+
     return <section ref={myRef} className="anime-list">
         <main className="animes">
             {anime ? anime.map((item) => {
@@ -43,5 +52,8 @@ export const Animes = ({ myRef, anime, topAnimes }) => {
                 })}
             { }
         </main>
+        <div className="load-more flex justify-center">
+            <button onClick={addAnimes}>LOAD MORE</button>
+        </div>
     </section>
 }

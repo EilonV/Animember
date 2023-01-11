@@ -12,19 +12,13 @@
             width: 300px;
             border-radius: 10px;
             box-shadow: 1px 1px 5px $grey;
+            margin-right: 10px;
         }
 
-        button {
-            border-radius: 10px;
-            background-color: $yellow;
-            transition: 0.5s;
-            margin-left: 10px;
-            box-shadow: 1px 1px 5px $grey;
+    }
 
-            &:hover {
-                cursor: pointer;
-            }
-        }
+    button {
+        box-shadow: 1px 1px 5px $grey;
     }
 
     select {

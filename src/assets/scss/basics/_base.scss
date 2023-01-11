@@ -13,6 +13,30 @@ body {
     width: 100%;
 }
 
+input,
+button {
+    border: none;
+    font-family: Noto Sans;
+    padding: 10px;
+    font-weight: 700;
+    border-radius: 10px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+button {
+    background-color: $yellow;
+    transition: 0.2s;
+    // box-shadow: 1px 1px 5px $grey;
+
+    &:hover {
+        background-color: $pink;
+        color: $white;
+    }
+}
+
 a {
     text-decoration: none;
 }

@@ -3,7 +3,8 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
     anime: '',
     topAnimes: '',
-    currAnime: 'topAnimes'
+    currAnime: 'topAnimes',
+    currAnimeOffset: 20
 }
 
 export const animeSlice = createSlice({
@@ -20,8 +21,14 @@ export const animeSlice = createSlice({
         changeAnimeSelection: (state, action) => {
             state.currAnime = action.payload
         },
+        incOffset: (state) => {
+            state.currAnimeOffset += 20
+        },
         getTopAnimes: (state, action) => {
             state.topAnimes = action.payload
+        },
+        addToTopAnimes: (state, action) => {
+            state.topAnimes.push(...action.payload)
         },
         sortAnimes: (state, action) => {
             console.log(action.payload)
@@ -61,6 +68,6 @@ export const animeSlice = createSlice({
 
 
 // Action creators are generated for each case reducer function
-export const { changeAnime, changeAnimeSelection, getTopAnimes, sortAnimes } = animeSlice.actions
+export const { changeAnime, changeAnimeSelection, getTopAnimes, addToTopAnimes, sortAnimes, incOffset } = animeSlice.actions
 
 export default animeSlice.reducer

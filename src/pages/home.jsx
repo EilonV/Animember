@@ -8,14 +8,10 @@ import { Header } from "../components/header"
 import { SearchBar } from "../components/anime-search"
 import { Animes } from "../components/animes"
 
-export const Home = () => {
+export const Home = ({ counter }) => {
     const dispatch = useDispatch()
     const myRef = useRef(null)
-
-    const { anime } = useSelector((state) => state.anime)
-    const { topAnimes } = useSelector((state) => state.anime)
-    const { currAnime } = useSelector((state) => state.anime)
-
+    const { anime, topAnimes, currAnime, currAnimeOffset } = useSelector((state) => state.anime)
     console.log('currAnime', currAnime);
 
     const handleSearch = (ev) => {
@@ -29,6 +25,6 @@ export const Home = () => {
     return <section className="search main-layout">
         <Header handleSearch={handleSearch} myRef={myRef} anime={anime} topAnimes={topAnimes} />
         <SearchBar handleSearch={handleSearch} anime={anime} topAnimes={topAnimes} currAnime={currAnime} />
-        <Animes myRef={myRef} anime={anime} topAnimes={topAnimes} />
+        <Animes myRef={myRef} anime={anime} topAnimes={topAnimes} currAnimeOffset={currAnimeOffset} />
     </section>
 }
