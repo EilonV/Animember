@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useEffect } from 'react'
 import { useRef } from 'react'
 import bg from '../assets/imgs/bg.png'
-import $ from 'jquery';
 
 export const Header = ({ handleSearch, myRef }) => {
     const modelRef = useRef(null)
@@ -48,9 +47,7 @@ export const Header = ({ handleSearch, myRef }) => {
         console.log(el)
 
     }
-    const reload = () => {
-        console.log('reload')
-    }
+
 
 
     return <header className="header-3d full">

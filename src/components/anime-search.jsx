@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux"
 import { sortAnimes } from "../features/anime/animeSlice"
 import axios from 'axios'
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 
 export const SearchBar = ({ handleSearch, currAnime }) => {
     const MAX = 14267
