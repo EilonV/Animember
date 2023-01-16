@@ -13,6 +13,8 @@ export const Header = ({ handleSearch, myRef }) => {
         if (localStorage.getItem('3D-toggle') === 'true') {
             console.log('NO 3D in STORAGE')
             modelRef.current.style.display = 'none'
+            imgRef.current.style.display = 'block'
+
             // $('.switcher-input').checked()
         }
         console.log('useEffect')

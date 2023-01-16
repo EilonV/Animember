@@ -5,19 +5,19 @@
 }
 
 @mixin for-tablet-layout {
-    @media (min-width: $tablet-breakpoint) {
+    @media (max-width: $tablet-breakpoint) {
         @content;
     }
 }
 
 @mixin for-wide-layout {
-    @media (min-width: $desktop-breakpoint) {
+    @media (max-width: $desktop-breakpoint) {
         @content;
     }
 }
 
 @mixin for-wider-layout {
-    @media (min-width: $wide-dekstop-breakpoint) {
+    @media (max-width: $wide-dekstop-breakpoint) {
         @content;
     }
 }

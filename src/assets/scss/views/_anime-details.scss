@@ -19,4 +19,14 @@
             color: red;
         }
     }
+
+    @include for-wide-layout {
+        flex-direction: column;
+    }
+
+    @include for-tablet-layout {
+        flex-direction: column;
+        font-size: 14px;
+    }
+
 }
