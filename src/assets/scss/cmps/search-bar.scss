@@ -1,6 +1,6 @@
 .search-bar {
     background-color: white;
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 20px 0;
     margin: 20px 0;
     padding-inline: 20px;
@@ -19,6 +19,19 @@
 
     button {
         box-shadow: 1px 1px 5px $grey;
+    }
+
+    .filters {
+        @include for-mobile-layout {
+            display: flex;
+            
+            margin-top: 10px;
+
+            button {
+                margin-right: 10px;
+            }
+        }
+
     }
 
     select {
@@ -48,6 +61,30 @@
 
             &:hover {
                 background-color: $pink;
+            }
+        }
+    }
+
+    @include for-mobile-layout {
+        flex-direction: column;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            justify-content: space-between;
+
+            input {
+                position: relative;
+                width: 94%;
+                margin: auto;
+                margin-bottom: 10px;
+            }
+
+            button {
+                position: relative;
+                width: 100%;
+                margin: auto;
             }
         }
     }

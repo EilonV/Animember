@@ -66,7 +66,6 @@
         .anime {
             position: relative;
             width: 100%;
-            transition: 3s;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -146,12 +145,21 @@
                     border-radius: 10px;
                 }
             }
+
+            @include for-mobile-layout {
+                margin-bottom: 10px;
+            }
         }
 
+        @include for-mobile-layout {
+            gap: 10px;
+            grid-template-columns: repeat(2, 1fr);
+
+        }
     }
 
     .load-more {
-        margin-bottom: 10px;
+        margin-bottom: 30px;
     }
 
 }

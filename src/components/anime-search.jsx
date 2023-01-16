@@ -22,18 +22,20 @@ export const SearchBar = ({ handleSearch, currAnime }) => {
             <input type="text" placeholder="e.g. Attack on titan..." />
             <button >Search</button>
         </form>
-        <button onClick={getRandomAnime}>Random anime</button>
+        <div className="filters">
+            <button onClick={getRandomAnime}>Random anime</button>
+            <select onChange={handleSelect}>
+                <option value="" defaultValue>Sort by</option>
+                <option value="ep">Episodes</option>
+                <option value="rate">Rating</option>
+                <option value="name">Name</option>
+            </select>
+        </div>
+
 
         {/* <Link to={`/anime/${anime.id}`}>
             <p>{anime.id}</p>
         </Link> */}
-        <select onChange={handleSelect}>
-            <option value="" defaultValue>Sort by</option>
-            <option value="ep">Episodes</option>
-            <option value="rate">Rating</option>
-            <option value="name">Name</option>
-        </select>
-
 
     </section>
 }
