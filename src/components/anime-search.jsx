@@ -10,9 +10,9 @@ export const SearchBar = ({ anime, handleSearch, currAnime }) => {
     const handleSelect = (ev) => {
         dispatch(sortAnimes([currAnime, ev.target.value]))
     }
-    const getRandomAnime = () => {
-        console.log('random')
-    }
+    // const getRandomAnime = () => {
+    //     console.log('random')
+    // }
     const getTrending = () => {
         // console.log(anime)
         dispatch(resetAnimes())
@@ -27,9 +27,9 @@ export const SearchBar = ({ anime, handleSearch, currAnime }) => {
             <button >Search</button>
         </form>
         <div className="filters">
-            <button >Most Popular</button>
+            {/* <button >Most Popular</button> */}
             <button onClick={getTrending}>Trending</button>
-            <button onClick={getRandomAnime}>Random anime</button>
+            {/* <button onClick={getRandomAnime}>Random anime</button> */}
             <select onChange={handleSelect}>
                 <option value="" defaultValue>Sort by</option>
                 <option value="ep">Episodes</option>
