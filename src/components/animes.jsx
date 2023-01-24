@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useDispatch } from 'react-redux'
-import { getTopAnimes, addToTopAnimes, addToAnimes, incOffset } from '../features/anime/animeSlice'
+import { getTopAnimes, addToAnimes, incOffset } from '../features/anime/animeSlice'
 import axios from 'axios'
 import { Link } from "react-router-dom"
 

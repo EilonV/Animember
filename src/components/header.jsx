@@ -40,14 +40,14 @@ export const Header = ({ handleSearch, myRef }) => {
         console.log(ev)
     }
 
-    const checkStorage = () => {
-        // console.log(localStorage.getItem('3D-toggle'))
-        // $('.slider').addClass('off')
-        // console.log(modelValueRef.current.checked)
-        var iframe = document.querySelector('iframe')
-        var el = iframe.contentWindow.frames
-        console.log(el)
-    }
+    // const checkStorage = () => {
+    //     // console.log(localStorage.getItem('3D-toggle'))
+    //     // $('.slider').addClass('off')
+    //     // console.log(modelValueRef.current.checked)
+    //     var iframe = document.querySelector('iframe')
+    //     var el = iframe.contentWindow.frames
+    //     console.log(el)
+    // }
 
 
 

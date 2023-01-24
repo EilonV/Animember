@@ -48,6 +48,8 @@ export const animeSlice = createSlice({
                     state.anime.push(...action.payload[1])
                     console.log(...action.payload[1])
                     break
+                default:
+                    break
             }
         },
         addToTopAnimes: (state, action) => {

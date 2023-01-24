@@ -1,10 +1,10 @@
 import { useDispatch } from "react-redux"
 import { sortAnimes, resetAnimes } from "../features/anime/animeSlice"
-import axios from 'axios'
+// import axios from 'axios'
 // import { Link } from "react-router-dom"
 
 export const SearchBar = ({ anime, handleSearch, currAnime }) => {
-    const MAX = 14267
+    // const MAX = 14267
     const dispatch = useDispatch()
 
     const handleSelect = (ev) => {
