@@ -4,7 +4,8 @@ const initialState = {
     anime: '',
     topAnimes: '',
     currAnime: 'topAnimes',
-    currAnimeOffset: 20
+    currAnimeOffset: 20,
+    currAnimeSearch: ''
 }
 
 export const animeSlice = createSlice({
@@ -18,14 +19,36 @@ export const animeSlice = createSlice({
         changeAnime: (state, action) => {
             state.anime = action.payload
         },
+        changeAnimeSearch: (state, action) => {
+            state.currAnimeSearch = action.payload
+        },
         changeAnimeSelection: (state, action) => {
             state.currAnime = action.payload
+        },
+        resetOffset: (state) => {
+            state.currAnimeOffset = 20
+        },
+        resetAnimes: (state) => {
+            state.anime = ''
         },
         incOffset: (state) => {
             state.currAnimeOffset += 20
         },
         getTopAnimes: (state, action) => {
             state.topAnimes = action.payload
+        },
+        addToAnimes: (state, action) => {
+            console.log(action.payload)
+            switch (action.payload[0]) {
+                case 'topAnimes':
+                    console.log(...action.payload[1])
+                    state.topAnimes.push(...action.payload[1])
+                    break
+                case 'anime':
+                    state.anime.push(...action.payload[1])
+                    console.log(...action.payload[1])
+                    break
+            }
         },
         addToTopAnimes: (state, action) => {
             state.topAnimes.push(...action.payload)
@@ -68,6 +91,6 @@ export const animeSlice = createSlice({
 
 
 // Action creators are generated for each case reducer function
-export const { changeAnime, changeAnimeSelection, getTopAnimes, addToTopAnimes, sortAnimes, incOffset } = animeSlice.actions
+export const { changeAnime, changeAnimeSearch, changeAnimeSelection, getTopAnimes, addToTopAnimes, addToAnimes, sortAnimes, incOffset, resetOffset, resetAnimes } = animeSlice.actions
 
 export default animeSlice.reducer

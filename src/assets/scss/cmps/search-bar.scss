@@ -22,16 +22,15 @@
     }
 
     .filters {
-        @include for-mobile-layout {
-            display: flex;
-            
-            margin-top: 10px;
 
-            button {
-                margin-right: 10px;
-            }
+        button {
+            margin-right: 10px;
         }
 
+        @include for-mobile-layout {
+            display: flex;
+            margin-top: 10px;
+        }
     }
 
     select {

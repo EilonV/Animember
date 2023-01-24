@@ -47,15 +47,12 @@ export const Header = ({ handleSearch, myRef }) => {
         var iframe = document.querySelector('iframe')
         var el = iframe.contentWindow.frames
         console.log(el)
-
     }
 
 
 
     return <header className="header-3d full">
         <div className='switcher-container flex align-center'>
-            <button onClick={checkStorage}>TEST IT HERE</button>
-
             <div className='swticher-3d-svgs'>
                 <FontAwesomeIcon className='fa-xl' icon={faCube} />
             </div>

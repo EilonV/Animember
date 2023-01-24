@@ -49,19 +49,6 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 10px;
-        transition: 0.5s;
-        animation-name: fade;
-        animation-duration: 2s;
-
-        @keyframes fade {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
 
         .anime {
             position: relative;
@@ -81,10 +68,10 @@
 
             img {
                 width: 100%;
-                // max-width: 250px;
                 min-width: 100px;
                 border-radius: 10px;
                 transition: 0.3s;
+                object-fit: contain;
 
                 &:hover {
                     filter: blur(2px);
@@ -97,7 +84,6 @@
                 }
 
                 &:hover~.get-anime-details {
-                    transition: 0.3s;
                     opacity: 1;
                 }
             }

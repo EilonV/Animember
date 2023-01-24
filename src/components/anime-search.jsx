@@ -1,9 +1,9 @@
 import { useDispatch } from "react-redux"
-import { sortAnimes } from "../features/anime/animeSlice"
+import { sortAnimes, resetAnimes } from "../features/anime/animeSlice"
 import axios from 'axios'
 // import { Link } from "react-router-dom"
 
-export const SearchBar = ({ handleSearch, currAnime }) => {
+export const SearchBar = ({ anime, handleSearch, currAnime }) => {
     const MAX = 14267
     const dispatch = useDispatch()
 
@@ -13,9 +13,13 @@ export const SearchBar = ({ handleSearch, currAnime }) => {
     const getRandomAnime = () => {
         console.log('random')
     }
-    const anime = axios.get(`https://kitsu.io/api/edge/anime/${Math.floor(Math.random(0) * MAX)}`)
-        .then((res) => console.log(res.data.data))
-    console.log(anime)
+    const getTrending = () => {
+        // console.log(anime)
+        dispatch(resetAnimes())
+    }
+    // const anime = axios.get(`https://kitsu.io/api/edge/anime/${Math.floor(Math.random(0) * MAX)}`)
+    //     .then((res) => console.log(res.data.data))
+    // console.log(anime)
 
     return <section className="search-bar flex align-center space-between">
         <form onSubmit={handleSearch}>
@@ -23,6 +27,8 @@ export const SearchBar = ({ handleSearch, currAnime }) => {
             <button >Search</button>
         </form>
         <div className="filters">
+            <button >Most Popular</button>
+            <button onClick={getTrending}>Trending</button>
             <button onClick={getRandomAnime}>Random anime</button>
             <select onChange={handleSelect}>
                 <option value="" defaultValue>Sort by</option>
