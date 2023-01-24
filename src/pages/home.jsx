@@ -2,7 +2,7 @@
 import axios from 'axios'
 import { useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { changeAnime, changeAnimeSelection, incOffset, resetOffset, changeAnimeSearch } from '../features/anime/animeSlice'
+import { changeAnime, changeAnimeSelection, incOffset, changeAnimeSearch } from '../features/anime/animeSlice'
 
 import { Header } from "../components/header"
 import { SearchBar } from "../components/anime-search"
